@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .xyz{
+          margin-bottom: 0px;
+          background-image: url('{% static "image/background.jpg" %}');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      </style>
+      
+</head>
+
+
+<body>
+  {% include "blood/navbar.html" %}
+<br>
+<section id="section-jumbotron" style="margin-bottom: 0px;" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center xyz">
+    <div class="container text-center">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+     
+      
+      <br><br><br><br>
+      
+    </div>  
+  </section>
+
+
+  <div class="jumbotron" style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
+
+    <h1 class="lead">
+      <h1>Every Drop Counts, Donate Today</h1>
+      
+    </h1>
+    
+    <h2>"Blood Donation is a Small Price for a Big Reward."</h2>
+    
+</div>
+
+  {% include "blood/footer.html" %}
+
+
+</body>
+
+</html>

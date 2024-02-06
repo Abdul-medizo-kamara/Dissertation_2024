@@ -1,0 +1,118 @@
+{% extends 'blood/adminbase.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Patient</title>
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- Main CSS-->
+    <link href="{% static "css/main.css" %}" rel="stylesheet" media="all">
+    <style>
+        /* Additional CSS styling goes here */
+        .page-wrapper {
+            background-color: #f2f2f2;
+            padding-top: 45px;
+            padding-bottom: 50px;
+        }
+
+        .wrapper {
+            max-width: 790px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card-heading {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .form-row {
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .value {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .input-group {
+            flex: 1;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-update {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btn-update:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="wrapper">
+        <div class="card">
+            <div class="card-heading">
+                <h2 class="title">Update Patient</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" autocomplete="off" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="form-row">
+                        <div class="name">First Name</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field userForm.first_name|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repeat similar form rows for other fields -->
+
+                    <div>
+                        <button class="btn-update" type="submit">Update</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock content %}
